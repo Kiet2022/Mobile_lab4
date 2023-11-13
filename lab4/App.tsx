@@ -1,100 +1,20 @@
-import 'react-native-gesture-handler';
-import React from 'react';
-import Contacts from './src/Contacts';
-import Store from './src/Store';
+import App_Run from './src/App';
+//import React from 'react';
+import ContactListItem from './src/ContactListItem';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
-import ProfileContact from './src/ProfileContact';
-import Favorites from './Favorites';
+import {View, StyleSheet, TouchableHighlight, Text, Image } from 'react-native';
+import React, {useState} from 'react';
+
+import Contacts from './src/Contact';
+import ContactThum from './src/ContactThum';
 
 
-const Stack = createStackNavigator();
 
-function ContactsScreens() {
-    return(
-        <Stack.Navigator
-            initialRouteName="Contacts"
-            screenOptions={
-                {
-                    headerShown: true
-                }
-            }
-        >
-            <Stack.Screen
-                name="Contacts"
-                component={Contacts}
-                options={{title:"Contacts"}}
-            />
-
-            <Stack.Screen
-                name="ProfileContact"
-                component={"ProfileContact"}
-                options={{title:"Profile contact"}}
-            />
-        </Stack.Navigator>
-    );
-}
-
-function FavoritesScreens() {
-    return(
-        <Stack.Navigator
-            initialRouteName="Favorites"
-            screenOptions={{
-                headerShown: true
-            }}
-        >
-            <Stack.Screen
-                name="Favorites"
-                component={Favorites}
-                options={{title: "Favorites"}}
-            />
-
-            <Stack.Screen
-                name='ProfileContact'
-                component={ProfileContact}
-                options={{title:"Profile Contact"}}
-            />
-        </Stack.Navigator>
-    );
+export default  App  =()=> {
+    const [count, setCount] = useState(0);
+    const onPress = () => setCount(count + 1);
+return(
+    //<ProfileContact/>
+<App_Run/>
+);
 };
-
-const Tab = createMaterialBottomTabNavigator();
-const TabNavigator =()=>{
-    return(
-        <Tab.Navigator
-        initialRouteName="ContactsScreens"
-        barStyle={{backgroundColor: "blue"}}
-        labeled={false}
-        activeTintColor={"greyLight"}
-        inactiveColor={"greyDark"}
-        >
-            <Tab.Screen 
-                name="Contacts"
-                component={ContactsScreens}
-                options={{tabBarIcon: 'format-list-bulleted'}}
-            />
-
-            <Tab.Screen 
-                name="Favorites"
-                component={FavoritesScreens}
-                options={{
-                    tabBarIcon: 'star-check'
-                }}
-            />
-        </Tab.Navigator>
-    );
-};
-
-const App =() =>{
-    return(
-        <Provider store={Store}>
-            <NavigationContainer>
-                <TabNavigator/>
-            </NavigationContainer>
-        </Provider>
-    );
-}
-
-export default App;

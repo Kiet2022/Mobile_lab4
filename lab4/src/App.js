@@ -86,7 +86,7 @@ const TabNavigator =()=>{
     );
 };
 
-const App =() =>{
+const App_Run =() =>{
     return(
         <Provider store={Store}>
             <NavigationContainer>
@@ -96,4 +96,4 @@ const App =() =>{
     );
 }
 
-export default App;
+export default App_Run;

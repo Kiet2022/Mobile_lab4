@@ -38,9 +38,9 @@ const ContactThum =({name,  phone,avatar, textColor, onPress}) =>{
 
 export default ContactThum;
 ContactThum.propTypes = {
-    name: PropTypes.string,
-    avatar: PropTypes.string,
-    phone: PropTypes.string,
+    name: propTypes.string,
+    avatar: propTypes.string,
+    phone: propTypes.string,
     onPress: PropTypes.func,
 }
 ContactThum.defaultProps ={

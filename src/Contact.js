@@ -1,14 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
+import {View, StyleSheet, TouchableHighlight, Text, Image} from 'react-native';
 import {mapContacts} from './Store';
-import {
-  SafeAreaView,
-  View,
-  FlatList,
-  StyleSheet
-} from 'react-native';
-import { useSelector, useDispatch } from 'react-redux'
-
-
+import {useSelector} from 'react-redux';
 const KeyExtractor = ({phone}) => phone;
 
 const fetchContacts = async () => {
@@ -20,7 +13,6 @@ const fetchContacts = async () => {
 const Contacts = ({navigation}) => {
   const {contacts} = useSelector(state => state);
   const dispatch = useDispatch();
-
   useEffect(() => {
     fetchContacts()
       .then(contacts => {

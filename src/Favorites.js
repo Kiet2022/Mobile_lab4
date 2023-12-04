@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {StyleSheet, View, FlatList} from 'react-native';
+import {StyleSheet, View, TouchableOpacity, Image, Text, FlatList} from 'react-native';
 import ContactThum from './ContactThum';
 
 import {useSelector} from 'react-redux';
@@ -20,12 +20,12 @@ const Favorites =({navigation}) =>{
         );
     };
 
-    const favorites = contacts.filter((contact) => contact.favorite);
+    const favorites = contacts.filter((contact) => contact.favortie);
     return(
         <View style={styles.container}>
             <FlatList
                 data={favorites}
-                keyExtractor={KeyExtractor}
+                keyExtractor={keyExtractor}
                 numColumns={3}
                 contentContainerStyle={styles.list}
                 renderItem={renderFavoriteThumbnail}

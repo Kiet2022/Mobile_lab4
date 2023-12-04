@@ -1,14 +1,13 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Provider } from 'react-redux';
+import Contacts from './src/Contacts'
+import Store from './src/Store';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-
-import ProfileContact from './ProfileContact';
+import {createStackNavigator} from '@react-navigation/stack';
+import ProfileContact from './src/ProfileContact';
 import Favorites from './Favorites';
-import Contacts from './Contact';
-import Store from './Store';
+
 
 const Stack = createStackNavigator();
 
@@ -30,7 +29,7 @@ function ContactsScreens() {
 
             <Stack.Screen
                 name="ProfileContact"
-                component={ProfileContact}
+                component={"ProfileContact"}
                 options={{title:"Profile contact"}}
             />
         </Stack.Navigator>

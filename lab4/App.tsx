@@ -1,20 +1,22 @@
-import App_Run from './src/App';
-//import React from 'react';
-import ContactListItem from './src/ContactListItem';
-
-import {View, StyleSheet, TouchableHighlight, Text, Image } from 'react-native';
 import React, {useState} from 'react';
-
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import Contacts from './src/Contact';
-import ContactThum from './src/ContactThum';
+import {Provider} from 'react-redux';
+import Store from './src/Store';
+import Favorites from './src/Favorites';
+import App_Run from './src/App';
 
-
-
-export default  App  =()=> {
-    const [count, setCount] = useState(0);
-    const onPress = () => setCount(count + 1);
-return(
-    //<ProfileContact/>
+const App = () => {
+  return (
 <App_Run/>
-);
+  );
 };
+
+export default App;

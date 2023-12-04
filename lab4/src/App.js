@@ -4,13 +4,11 @@ import { Provider } from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import MaterialCommunityIcons    from 'react-native-vector-icons/FontAwesome';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-const myIcon = <Icon name="rocket" size={30} color="#900" />;
+import Icon    from 'react-native-vector-icons/FontAwesome5';
 
 
-import ProfileContact from './ProfileContact';
-import Favorites from './Favorites';
+import Profile_Contact from './ProfileContact';
+import Favorites_Screen from './Favorites';
 import Contacts_Screen from './Contact';
 import Store from './Store';
 
@@ -34,7 +32,7 @@ function ContactsScreens() {
 
             <Stack.Screen
                 name="ProfileContact"
-                component={ProfileContact}
+                component={Profile_Contact}
                 options={{title:"Profile contact"}}
             />
         </Stack.Navigator>
@@ -51,13 +49,13 @@ function FavoritesScreens() {
         >
             <Stack.Screen
                 name="Favorites"
-                component={Favorites}
+                component={Favorites_Screen}
                 options={{title: "Favorites"}}
             />
 
             <Stack.Screen
                 name='ProfileContact'
-                component={ProfileContact}
+                component={Profile_Contact}
                 options={{title:"Profile Contact"}}
             />
         </Stack.Navigator>
@@ -80,8 +78,7 @@ const TabNavigator =()=>{
                 options={{
                     tabBarLabel: 'Contacts',
                     
-                    tabBarIcon:() =>{<MaterialCommunityIcons name='format-list-bulleted'  size={26} />} 
-                }}
+                    tabBarIcon: 'format-list-bulleted'}}
             />
 
             <Tab.Screen 
@@ -89,8 +86,7 @@ const TabNavigator =()=>{
                 component={FavoritesScreens}
                 options={{
                     tabBarLabel: 'Favorties',
-                    tabBarIcon:() =>{<MaterialCommunityIcons name='star-check'  size={26} />}
-                   
+                    tabBarIcon: 'star-check'
                 }}
             />
         </Tab.Navigator>

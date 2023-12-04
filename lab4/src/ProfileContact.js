@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, TouchableHighlight, Text, Image } from 'react-native';
+import {View, StyleSheet } from 'react-native';
 import ContactThumnail from './ContactThum';
 import DetailListItem from './DetailListItem';
 import {IconButton,} from 'react-native-paper';
 
 
-const ProfileContact = ({route}) =>{
+const Profile_Contact = ({route}) =>{
     const {contact} = route.params;
     const{id, avatar, name, email, phone, cell, favorite} =contact;
 
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ProfileContact;
+export default Profile_Contact;

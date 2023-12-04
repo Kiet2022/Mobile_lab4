@@ -1,5 +1,5 @@
 import React, {View} from 'react';
-import {List, Icon, MD3Colors } from 'react-native-paper';
+import {Icon, MD3Colors } from 'react-native-paper';
 
 
 const DetailListItem = ({icon, title, subtitle}) => {

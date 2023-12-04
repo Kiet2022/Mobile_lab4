@@ -8,7 +8,7 @@ import {useSelector} from 'react-redux';
 
 const KeyExtractor =({phone}) => phone;
 
-const Favorites =({navigation}) =>{
+const Favorites_Screen =({navigation}) =>{
     const {contacts} =useSelector((state) => state);
     const renderFavoriteThumbnail =({item}) => {
         const {avatar} = item;
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Favorites;
+export default Favorites_Screen;

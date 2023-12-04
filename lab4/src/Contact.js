@@ -34,7 +34,7 @@ const Contacts_Screen = ({navigation}) => {
     return (
       <ContactListItem
         name={name}
-        avatar={avartar}
+        avatar={avatar}
         phone={phone}
         onPress={() => navigation.navigate('ProfileContact', {contact: item})}
       />

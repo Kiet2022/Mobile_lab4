@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, TouchableHighlight, Text, Image } from 'react-native';
-import ContactThum from './ContactThum';
+import ContactThumnail from './ContactThum';
 import DetailListItem from './DetailListItem';
 import {IconButton,} from 'react-native-paper';
 
@@ -12,7 +12,7 @@ const ProfileContact = ({route}) =>{
     return(
         <View style={styles.container}>
             <View style={styles.avatarSection}>
-                <ContactThum avatar={avatar} name={name} phone={phone} />
+                <ContactThumnail avatar={avatar} name={name} phone={phone} />
             </View>
             <View style={styles.detailsSection}>
                 <DetailListItem icon="mail" title="Email" subtitle={email}/>

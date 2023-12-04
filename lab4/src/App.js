@@ -4,10 +4,14 @@ import { Provider } from 'react-redux';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons    from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+const myIcon = <Icon name="rocket" size={30} color="#900" />;
+
 
 import ProfileContact from './ProfileContact';
 import Favorites from './Favorites';
-import Contacts from './Contact';
+import Contacts_Screen from './Contact';
 import Store from './Store';
 
 const Stack = createStackNavigator();
@@ -24,7 +28,7 @@ function ContactsScreens() {
         >
             <Stack.Screen
                 name="Contacts"
-                component={Contacts}
+                component={Contacts_Screen}
                 options={{title:"Contacts"}}
             />
 
@@ -73,14 +77,20 @@ const TabNavigator =()=>{
             <Tab.Screen 
                 name="Contacts"
                 component={ContactsScreens}
-                options={{tabBarIcon: 'format-list-bulleted'}}
+                options={{
+                    tabBarLabel: 'Contacts',
+                    
+                    tabBarIcon:() =>{<MaterialCommunityIcons name='format-list-bulleted'  size={26} />} 
+                }}
             />
 
             <Tab.Screen 
                 name="Favorites"
                 component={FavoritesScreens}
                 options={{
-                    tabBarIcon: 'star-check'
+                    tabBarLabel: 'Favorties',
+                    tabBarIcon:() =>{<MaterialCommunityIcons name='star-check'  size={26} />}
+                   
                 }}
             />
         </Tab.Navigator>

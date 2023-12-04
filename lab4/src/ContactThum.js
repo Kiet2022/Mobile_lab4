@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 
-const ContactThum =({name,  phone,avatar, textColor, onPress}) =>{
+const ContactThumnail =({name,  phone,avatar, textColor, onPress}) =>{
     const colorStyle = {
         color: textColor,
     }
@@ -36,14 +36,14 @@ const ContactThum =({name,  phone,avatar, textColor, onPress}) =>{
     );
 };
 
-export default ContactThum;
-ContactThum.propTypes = {
+export default ContactThumnail;
+ContactThumnail.propTypes = {
     name: PropTypes.string,
     avatar: PropTypes.string,
     phone: PropTypes.string,
     onPress: PropTypes.func,
 }
-ContactThum.defaultProps ={
+ContactThumnail.defaultProps ={
     name: '',
     phone: '',
     textColor: 'white',

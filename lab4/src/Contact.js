@@ -17,7 +17,7 @@ const fetchContacts = async () => {
   return ContactData.results.map(mapContacts);
 };
 
-const Contacts = ({navigation}) => {
+const Contacts_Screen = ({navigation}) => {
   const {contacts} = useSelector(state => state);
   const dispatch = useDispatch();
 
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Contacts;
+export default Contacts_Screen;
